@@ -1,33 +1,29 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Brand colors */
-  --color-ink: #0a0a0a;
-  --color-ink-2: #141414;
-  --color-line: #232323;
-  --color-bone: #ededed;
-  --color-mute: #8a8a8a;
-  --color-brand: #39ff14;
-  --color-brand-2: #2bd80a;
+  --color-ink:    #080808;
+  --color-ink-2:  #111111;
+  --color-ink-3:  #1a1a1a;
+  --color-line:   #222222;
+  --color-bone:   #f0f0f0;
+  --color-mute:   #666666;
+  --color-brand:  #39ff14;
+  --color-brand-2:#2bd80a;
 
-  /* Fonts (variables set in layout.tsx via next/font) */
   --font-display: var(--font-display);
-  --font-sans: var(--font-body);
-
-  /* Background + foreground used by base body styles below */
-  --color-background: var(--color-ink);
-  --color-foreground: var(--color-bone);
+  --font-sans:    var(--font-body);
 }
 
-:root {
-  color-scheme: dark;
-}
+/* ─── Base ─────────────────────────────────────────── */
+:root { color-scheme: dark; }
 
-html,
-body {
+html { scroll-behavior: smooth; }
+
+html, body {
   background: var(--color-ink);
   color: var(--color-bone);
-  font-family: var(--font-body), Inter, system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -35,8 +31,155 @@ body {
   color: var(--color-ink);
 }
 
-/* Sharp focus rings — accessible but on-brand */
 :focus-visible {
   outline: 2px solid var(--color-brand);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
+
+/* ─── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-ink); }
+::-webkit-scrollbar-thumb { background: var(--color-brand); }
+
+/* ─── Noise grain overlay ───────────────────────────── */
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ─── Keyframe animations ───────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes line-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92%       { opacity: 1; }
+  93%       { opacity: 0.4; }
+  94%       { opacity: 1; }
+  97%       { opacity: 0.7; }
+  98%       { opacity: 1; }
+}
+
+/* ─── Animation utilities ───────────────────────────── */
+.anim-fade-up  { animation: fade-up  0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-fade-in  { animation: fade-in  0.5s ease both; }
+.anim-line     { animation: line-grow 0.8s cubic-bezier(0.16,1,0.3,1) both; transform-origin: left; }
+.anim-flicker  { animation: flicker 8s ease-in-out infinite; }
+
+.delay-1  { animation-delay: 0.1s; }
+.delay-2  { animation-delay: 0.2s; }
+.delay-3  { animation-delay: 0.35s; }
+.delay-4  { animation-delay: 0.5s; }
+.delay-5  { animation-delay: 0.65s; }
+
+/* ─── Section diagonal clip ─────────────────────────── */
+.clip-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+  padding-bottom: 8%;
+}
+.clip-top {
+  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+  padding-top: 8%;
+}
+
+/* ─── Green scan line (decorative) ─────────────────── */
+.scan-line {
+  position: relative;
+}
+.scan-line::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-brand) 30%, var(--color-brand) 70%, transparent);
+  opacity: 0.5;
+}
+
+/* ─── Eyebrow label ─────────────────────────────────── */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--color-brand);
+  flex-shrink: 0;
+}
+
+/* ─── Prose muted ───────────────────────────────────── */
+.lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.75;
+  color: var(--color-mute);
+}
+
+/* ─── Green CTA button ──────────────────────────────── */
+.btn-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-brand);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-brand:hover { background: var(--color-brand-2); transform: translateY(-1px); }
+.btn-brand:active { transform: translateY(0); }
+
+/* ─── Ghost button ──────────────────────────────────── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--color-line);
+  color: var(--color-bone);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s;
+}
+.btn-ghost:hover { border-color: var(--color-brand); color: var(--color-brand); transform: translateY(-1px); }
+
+/* ─── Form field ────────────────────────────────────── */
+.field {
+  width: 100%;
+  background: var(--color-ink-2);
+  border: 1px solid var(--color-line);
+  color: var(--color-bone);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.15s;
+  appearance: none;
+}
+.field::placeholder { color: var(--color-mute); }
+.field:focus { outline: none; border-color: var(--color-brand); }

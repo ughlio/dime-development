@@ -156,106 +156,93 @@ const services: Service[] = [
 ];
 
 const bundleIncentives = [
-  { item: "Workout booklet", three: true, five: true, ten: true, party: true },
-  { item: "T-shirt", three: false, five: true, ten: true, party: true },
-  { item: "Tracksuit", three: false, five: false, ten: true, party: false },
-  { item: "Backpack", three: false, five: false, ten: true, party: false },
-  { item: "Medals", three: false, five: false, ten: false, party: true },
+  { item: "Workout booklet", three: true,  five: true,  ten: true,  party: true  },
+  { item: "T-shirt",         three: false, five: true,  ten: true,  party: true  },
+  { item: "Tracksuit",       three: false, five: false, ten: true,  party: false },
+  { item: "Backpack",        three: false, five: false, ten: true,  party: false },
+  { item: "Medals",          three: false, five: false, ten: false, party: true  },
 ];
 
 function ServiceBlock({ s }: { s: Service }) {
   return (
-    <article
-      id={s.slug}
-      className="scroll-mt-24 border-b border-[var(--color-line)] py-16 lg:py-20"
-    >
-      <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:gap-12">
-        <div className="font-[family-name:var(--font-display)] text-7xl leading-none text-brand lg:text-9xl">
-          {s.num}
-        </div>
-
-        <div>
-          <div className="font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.3em] text-mute">
-            {s.tag}
+    <article id={s.slug} className="scroll-mt-24" style={{ borderBottom: "1px solid var(--color-line)" }}>
+      <div className="py-16 lg:py-24">
+        <div className="grid gap-8 lg:grid-cols-[8rem_1fr] lg:gap-16">
+          {/* Number */}
+          <div
+            className="font-[family-name:var(--font-display)] leading-none select-none"
+            style={{ fontSize: "clamp(5rem,12vw,8rem)", color: "var(--color-brand)", opacity: 0.2, lineHeight: 1 }}
+          >
+            {s.num}
           </div>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-4xl uppercase tracking-tight md:text-5xl">
-            {s.name}
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-mute">
-            {s.blurb}
-          </p>
-          {s.bullets && (
-            <ul className="mt-6 grid gap-2 sm:grid-cols-2">
-              {s.bullets.map((b) => (
-                <li
-                  key={b}
-                  className="flex items-start gap-3 text-sm text-bone"
-                >
-                  <span className="mt-1 h-[2px] w-4 shrink-0 bg-brand" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          )}
 
-          {/* Pricing table */}
-          <div className="mt-8 overflow-x-auto border border-[var(--color-line)]">
-            <table className="w-full min-w-[480px] text-left text-sm">
-              <thead className="bg-ink-2">
-                <tr>
-                  <th className="border-b border-[var(--color-line)] px-4 py-3 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-brand">
-                    Age / Group
-                  </th>
-                  {s.pricing.headers.map((h) => (
-                    <th
-                      key={h}
-                      className="border-b border-l border-[var(--color-line)] px-4 py-3 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-brand"
-                    >
-                      {h}
+          <div>
+            <div className="eyebrow mb-3">{s.tag}</div>
+            <h2
+              className="font-[family-name:var(--font-display)] uppercase leading-[0.88] tracking-tight"
+              style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}
+            >
+              {s.name}
+            </h2>
+            <p className="mt-5 max-w-2xl leading-relaxed" style={{ color: "var(--color-mute)", fontSize: "1.05rem", lineHeight: 1.75 }}>
+              {s.blurb}
+            </p>
+
+            {s.bullets && (
+              <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+                {s.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-sm" style={{ color: "var(--color-bone)" }}>
+                    <span className="mt-[0.45rem] shrink-0" style={{ display: "block", height: "2px", width: "1rem", background: "var(--color-brand)" }} />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* Pricing table */}
+            <div className="mt-10 overflow-x-auto" style={{ border: "1px solid var(--color-line)" }}>
+              <table className="w-full min-w-[480px] text-left text-sm">
+                <thead>
+                  <tr style={{ background: "var(--color-ink-2)" }}>
+                    <th className="px-4 py-3 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em]"
+                      style={{ color: "var(--color-brand)", borderBottom: "1px solid var(--color-line)" }}>
+                      Age / Group
                     </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {s.pricing.rows.map((r) => (
-                  <tr
-                    key={r.label}
-                    className="border-b border-[var(--color-line)] last:border-b-0 hover:bg-ink-2/40"
-                  >
-                    <th
-                      scope="row"
-                      className="px-4 py-3 text-left font-medium text-bone"
-                    >
-                      {r.label}
-                    </th>
-                    {r.prices.map((p, i) => (
-                      <td
-                        key={i}
-                        className="border-l border-[var(--color-line)] px-4 py-3 font-[family-name:var(--font-display)] tracking-tight text-bone"
-                      >
-                        {p}
-                      </td>
+                    {s.pricing.headers.map((h) => (
+                      <th key={h} className="px-4 py-3 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em]"
+                        style={{ color: "var(--color-brand)", borderBottom: "1px solid var(--color-line)", borderLeft: "1px solid var(--color-line)" }}>
+                        {h}
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {s.pricing.rows.map((r, ri) => (
+                    <tr key={r.label} style={{ borderBottom: ri === s.pricing.rows.length - 1 ? "none" : "1px solid var(--color-line)" }}>
+                      <th scope="row" className="px-4 py-3 text-left font-medium" style={{ color: "var(--color-bone)" }}>
+                        {r.label}
+                      </th>
+                      {r.prices.map((p, i) => (
+                        <td key={i} className="px-4 py-3 font-[family-name:var(--font-display)] tracking-tight"
+                          style={{ color: "var(--color-bone)", borderLeft: "1px solid var(--color-line)" }}>
+                          {p}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-          {s.footnote && (
-            <p className="mt-3 text-xs text-mute">{s.footnote}</p>
-          )}
+            {s.footnote && (
+              <p className="mt-3 text-xs" style={{ color: "var(--color-mute)" }}>{s.footnote}</p>
+            )}
 
-          <div className="mt-8">
-            <Link
-              href={`/booking?service=${encodeURIComponent(s.name)}`}
-              className="group inline-flex items-center bg-brand px-6 py-3 font-[family-name:var(--font-display)] text-sm uppercase tracking-[0.2em] text-ink transition-colors hover:bg-brand-2"
-            >
-              Book {s.name.split(" ").slice(0, 2).join(" ")}
-              <span className="ml-2 transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+            <div className="mt-8">
+              <Link href={`/booking?service=${encodeURIComponent(s.name)}`} className="btn-brand">
+                Book {s.name.split(/[&·]/)[0].trim()} →
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -267,20 +254,24 @@ export default function ServicesPage() {
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-[var(--color-line)]">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-          <div className="flex items-center gap-3 text-xs font-[family-name:var(--font-display)] tracking-[0.3em] uppercase text-brand">
-            <span className="h-[2px] w-10 bg-brand" />
-            Services & Pricing
-          </div>
-          <h1 className="mt-4 font-[family-name:var(--font-display)] text-6xl uppercase leading-[0.9] tracking-tight md:text-8xl">
-            Pick Your
-            <br />
-            <span className="text-brand">Path.</span>
+      <section className="noise relative overflow-hidden" style={{ borderBottom: "1px solid var(--color-line)" }}>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-4 inset-y-0 flex items-center font-[family-name:var(--font-display)] select-none leading-none"
+          style={{ fontSize: "clamp(120px,28vw,360px)", color: "var(--color-brand)", opacity: 0.04 }}
+        >
+          DD
+        </div>
+        <div className="relative mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-24">
+          <div className="eyebrow">Services & Pricing</div>
+          <h1
+            className="mt-4 font-[family-name:var(--font-display)] uppercase leading-[0.85]"
+            style={{ fontSize: "clamp(3.5rem,12vw,11rem)" }}
+          >
+            Pick Your<br /><span style={{ color: "var(--color-brand)" }}>Path.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-mute md:text-xl">
-            Six ways to train with Dime Development. Age-tiered pricing, bundle
-            discounts, and free kit on every block booking.
+          <p className="lead mt-6 max-w-2xl">
+            Six ways to train with Dime Development. Age-tiered pricing, bundle discounts, and free kit on every block booking.
           </p>
 
           {/* Quick nav */}
@@ -289,7 +280,16 @@ export default function ServicesPage() {
               <a
                 key={s.slug}
                 href={`#${s.slug}`}
-                className="border border-[var(--color-line)] bg-ink-2 px-4 py-2 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.2em] text-bone transition-colors hover:border-brand hover:text-brand"
+                className="font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.2em] px-4 py-2 transition-all"
+                style={{ border: "1px solid var(--color-line)", background: "var(--color-ink-2)", color: "var(--color-bone)" }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--color-brand)";
+                  (e.currentTarget as HTMLElement).style.color = "var(--color-brand)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--color-line)";
+                  (e.currentTarget as HTMLElement).style.color = "var(--color-bone)";
+                }}
               >
                 {s.num} · {s.name.split(/[&·]/)[0].trim()}
               </a>
@@ -300,7 +300,7 @@ export default function ServicesPage() {
 
       {/* SERVICES LIST */}
       <section>
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-5 lg:px-10">
           {services.map((s) => (
             <ServiceBlock key={s.slug} s={s} />
           ))}
@@ -308,65 +308,44 @@ export default function ServicesPage() {
       </section>
 
       {/* BUNDLE INCENTIVES */}
-      <section className="border-t border-[var(--color-line)] bg-ink-2">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
-          <div className="flex items-center gap-3 text-xs font-[family-name:var(--font-display)] tracking-[0.3em] uppercase text-brand">
-            <span className="h-[2px] w-10 bg-brand" />
-            Block Booking Incentives
-          </div>
-          <h2 className="mt-3 max-w-3xl font-[family-name:var(--font-display)] text-5xl uppercase leading-[0.9] tracking-tight md:text-6xl">
-            Block-book and get <span className="text-brand">kitted out.</span>
+      <section style={{ background: "var(--color-ink-2)", borderTop: "1px solid var(--color-line)" }}>
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-24">
+          <div className="eyebrow mb-6">Block Booking Incentives</div>
+          <h2
+            className="mt-4 max-w-3xl font-[family-name:var(--font-display)] uppercase leading-[0.88]"
+            style={{ fontSize: "clamp(2rem,5vw,4.5rem)" }}
+          >
+            Block-book and get{" "}
+            <span style={{ color: "var(--color-brand)" }}>kitted out.</span>
           </h2>
-          <p className="mt-4 max-w-2xl text-mute">
-            Every bundle includes free Dime Development gear. The bigger the
-            bundle, the bigger the drop.
+          <p className="mt-5 max-w-2xl" style={{ color: "var(--color-mute)", lineHeight: 1.75 }}>
+            Every bundle includes free Dime Development gear. The bigger the bundle, the bigger the drop.
           </p>
 
-          <div className="mt-10 overflow-x-auto border border-[var(--color-line)] bg-ink">
+          <div className="mt-10 overflow-x-auto" style={{ border: "1px solid var(--color-line)" }}>
             <table className="w-full min-w-[640px] text-left text-sm">
-              <thead className="bg-ink-2">
-                <tr>
-                  <th className="border-b border-[var(--color-line)] px-4 py-3 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-brand">
-                    Bonus Item
-                  </th>
-                  <th className="border-b border-l border-[var(--color-line)] px-4 py-3 text-center font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-brand">
-                    3 Session
-                  </th>
-                  <th className="border-b border-l border-[var(--color-line)] px-4 py-3 text-center font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-brand">
-                    5 Session
-                  </th>
-                  <th className="border-b border-l border-[var(--color-line)] px-4 py-3 text-center font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-brand">
-                    10 Session
-                  </th>
-                  <th className="border-b border-l border-[var(--color-line)] px-4 py-3 text-center font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-brand">
-                    Party Bundle
-                  </th>
+              <thead>
+                <tr style={{ background: "var(--color-ink-3)" }}>
+                  {["Bonus Item", "3 Session", "5 Session", "10 Session", "Party Bundle"].map((h, i) => (
+                    <th key={h} className="px-4 py-3 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em] text-center first:text-left"
+                      style={{ color: "var(--color-brand)", borderBottom: "1px solid var(--color-line)", borderLeft: i > 0 ? "1px solid var(--color-line)" : undefined }}>
+                      {h}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {bundleIncentives.map((row) => (
-                  <tr
-                    key={row.item}
-                    className="border-b border-[var(--color-line)] last:border-b-0"
-                  >
-                    <th
-                      scope="row"
-                      className="px-4 py-3 text-left font-medium text-bone"
-                    >
+                {bundleIncentives.map((row, ri) => (
+                  <tr key={row.item} style={{ borderBottom: ri === bundleIncentives.length - 1 ? "none" : "1px solid var(--color-line)" }}>
+                    <th scope="row" className="px-4 py-3 text-left font-medium" style={{ color: "var(--color-bone)" }}>
                       {row.item}
                     </th>
                     {[row.three, row.five, row.ten, row.party].map((v, i) => (
-                      <td
-                        key={i}
-                        className="border-l border-[var(--color-line)] px-4 py-3 text-center"
-                      >
-                        {v ? (
-                          <span className="font-[family-name:var(--font-display)] text-xl text-brand">
-                            ✓
-                          </span>
-                        ) : (
-                          <span className="text-mute">—</span>
-                        )}
+                      <td key={i} className="px-4 py-3 text-center" style={{ borderLeft: "1px solid var(--color-line)" }}>
+                        {v
+                          ? <span className="font-[family-name:var(--font-display)] text-xl" style={{ color: "var(--color-brand)" }}>✓</span>
+                          : <span style={{ color: "var(--color-mute)" }}>—</span>
+                        }
                       </td>
                     ))}
                   </tr>
@@ -378,23 +357,17 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-[var(--color-line)]">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-16 lg:flex-row lg:items-center lg:px-10">
+      <section style={{ borderTop: "1px solid var(--color-line)" }}>
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 py-14 sm:flex-row sm:items-center lg:px-10">
           <div>
-            <h2 className="font-[family-name:var(--font-display)] text-4xl uppercase tracking-tight md:text-5xl">
+            <p className="font-[family-name:var(--font-display)] uppercase tracking-tight" style={{ fontSize: "clamp(1.5rem,4vw,3rem)" }}>
               Not sure which fits?
-            </h2>
-            <p className="mt-3 max-w-xl text-mute">
-              Send a message — coach will recommend the right package based on
-              your level, goals, and schedule.
+            </p>
+            <p className="mt-3 max-w-xl" style={{ color: "var(--color-mute)", lineHeight: 1.75 }}>
+              Send a message — coach will recommend the right package based on your level, goals, and schedule.
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="group inline-flex items-center border border-[var(--color-line)] px-6 py-3 font-[family-name:var(--font-display)] text-sm uppercase tracking-[0.2em] text-bone transition-colors hover:border-brand hover:text-brand"
-          >
-            Get In Touch →
-          </Link>
+          <Link href="/contact" className="btn-ghost shrink-0">Get In Touch →</Link>
         </div>
       </section>
     </>
