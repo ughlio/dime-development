@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dime Development | Daniel Maxwell Basketball Coaching",
+  title: "Dime Development | London Basketball Coaching with Daniel Maxwell",
   description:
-    "1-on-1, group, clinic, and online basketball training with Coach Daniel Maxwell. Dimes don't miss.",
+    "London-based basketball coaching. 1-on-1, group, clinic, and online training with Coach Daniel Maxwell. Dimes don't miss.",
 };
 
 export default function RootLayout({

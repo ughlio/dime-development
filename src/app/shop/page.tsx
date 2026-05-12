@@ -4,7 +4,7 @@ const products = [
   {
     id: "tee-classic",
     name: "Classic Logo Tee",
-    price: "$32",
+    price: "£28",
     tag: "Apparel",
     swatch: "from-ink-2 to-ink",
     accent: "DIME",
@@ -12,7 +12,7 @@ const products = [
   {
     id: "hoodie-black",
     name: "Heavyweight Hoodie",
-    price: "$68",
+    price: "£55",
     tag: "Apparel",
     swatch: "from-ink-2 to-brand/20",
     accent: "DD",
@@ -20,7 +20,7 @@ const products = [
   {
     id: "ball-training",
     name: "Training Basketball",
-    price: "$45",
+    price: "£38",
     tag: "Gear",
     swatch: "from-brand/30 to-ink",
     accent: "29.5",
@@ -28,7 +28,7 @@ const products = [
   {
     id: "shorts-mesh",
     name: "Mesh Training Shorts",
-    price: "$38",
+    price: "£32",
     tag: "Apparel",
     swatch: "from-ink to-ink-2",
     accent: "·",
@@ -36,7 +36,7 @@ const products = [
   {
     id: "cap-snapback",
     name: "DD Snapback Cap",
-    price: "$28",
+    price: "£24",
     tag: "Accessories",
     swatch: "from-ink-2 to-brand/15",
     accent: "DD",
@@ -44,7 +44,7 @@ const products = [
   {
     id: "bottle-steel",
     name: "Steel Water Bottle",
-    price: "$22",
+    price: "£18",
     tag: "Accessories",
     swatch: "from-ink to-brand/20",
     accent: "H2O",

@@ -5,28 +5,40 @@ import { useSearchParams } from "next/navigation";
 
 const sessionTypes = [
   {
-    id: "1-on-1",
-    name: "1-on-1 Training",
-    tag: "Personal",
+    id: "1-2-1",
+    name: "1-2-1 Basketball Session",
+    tag: "Skill Development",
     blurb: "Solo session. Full attention.",
   },
   {
-    id: "group",
-    name: "Group Session",
-    tag: "2–4 Players",
-    blurb: "Small group, shared cost.",
+    id: "mentoring",
+    name: "1-2-1 Mentoring & Intervention",
+    tag: "Weekly Programme",
+    blurb: "Term-based mentoring + on-court work.",
   },
   {
-    id: "clinic",
-    name: "Clinic / Camp",
-    tag: "Multi-Day",
-    blurb: "Position-specific intensive.",
+    id: "speaking",
+    name: "Guest Speaker & Presentations",
+    tag: "Schools / Conferences",
+    blurb: "Talks, workshops, presentations.",
   },
   {
-    id: "online",
-    name: "Online Training",
-    tag: "Remote",
-    blurb: "Plans + film, delivered.",
+    id: "schools",
+    name: "Schools & Colleges Extra-Curricular",
+    tag: "Group · Max 25",
+    blurb: "After-school clubs, PE add-ons.",
+  },
+  {
+    id: "camps",
+    name: "Basketball Camps",
+    tag: "Half-Term · Holiday",
+    blurb: "Multi-day camps.",
+  },
+  {
+    id: "parties",
+    name: "Basketball Party Session",
+    tag: "Birthdays · Min 6 / Max 15",
+    blurb: "1hr or 2hr coach-led party.",
   },
 ];
 
@@ -35,7 +47,7 @@ function BookingForm() {
   const initialFromQuery = params.get("service");
 
   const [type, setType] = useState<string>(
-    sessionTypes.find((s) => s.name === initialFromQuery)?.id ?? "1-on-1"
+    sessionTypes.find((s) => s.name === initialFromQuery)?.id ?? "1-2-1"
   );
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">(
     "idle"

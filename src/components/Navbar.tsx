@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -22,10 +23,18 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <Link
           href="/"
-          className="font-[family-name:var(--font-display)] text-2xl tracking-[0.08em] text-bone hover:text-brand transition-colors"
+          aria-label="Dime Development — Home"
+          className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          DIME<span className="text-brand">·</span>DEVELOPMENT
+          <Image
+            src="/logo.png"
+            alt="Dime Development"
+            width={240}
+            height={72}
+            priority
+            className="h-12 w-auto md:h-14"
+          />
         </Link>
 
         {/* Desktop */}

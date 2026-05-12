@@ -31,7 +31,7 @@ const timeline = [
   { year: "2014", text: "Started coaching at the youth level." },
   { year: "2017", text: "First full season at the prep / high school level." },
   { year: "2020", text: "Built private skill-development program from the ground up." },
-  { year: "2024", text: "Dime Development launches — full-service player development." },
+  { year: "2024", text: "Dime Development Ltd. registered in London — full-service player development launches." },
 ];
 
 export default function AboutPage() {
@@ -51,8 +51,8 @@ export default function AboutPage() {
               <span className="text-brand">Maxwell.</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-mute md:text-xl">
-              A decade in player development. Hundreds of players sharpened.
-              Built on a simple belief — the work doesn&apos;t lie.
+              London-based. A decade in player development. Hundreds of players
+              sharpened. Built on a simple belief — the work doesn&apos;t lie.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="absolute -bottom-px -right-px bg-brand px-4 py-2 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.2em] text-ink">
-              Head Coach
+              Director · Founder
             </div>
           </div>
         </div>

@@ -2,31 +2,35 @@ import Link from "next/link";
 
 const services = [
   {
-    name: "1-on-1",
-    tag: "Personal",
-    blurb: "Tailored work on your handles, finishing, and IQ.",
+    name: "1-2-1 Sessions",
+    tag: "Skill Development",
+    blurb: "Tailored work on handles, finishing, and IQ. From £20/hr.",
+    href: "/services#1-2-1",
   },
   {
-    name: "Group",
-    tag: "Small Squad",
-    blurb: "Up to 4 players. Compete. Sharpen. Repeat.",
+    name: "Mentoring",
+    tag: "Weekly Programmes",
+    blurb: "Basketball-based mentoring & intervention. Term packages.",
+    href: "/services#mentoring",
   },
   {
-    name: "Clinics",
-    tag: "Camps",
-    blurb: "Multi-day intensives. Position-specific.",
+    name: "Schools",
+    tag: "Extra-Curricular",
+    blurb: "After-school sessions & PE add-ons. Max 25 players.",
+    href: "/services#schools",
   },
   {
-    name: "Online",
-    tag: "Remote",
-    blurb: "Film breakdown + drill plans, delivered weekly.",
+    name: "Camps",
+    tag: "Half-Term · Holiday",
+    blurb: "Multi-day intensives. Skill blocks + live competition.",
+    href: "/services#camps",
   },
 ];
 
 const stats = [
   { num: "10+", label: "Years Coaching" },
   { num: "500+", label: "Players Developed" },
-  { num: "D1", label: "Experience" },
+  { num: "LDN", label: "Based in London" },
   { num: "1", label: "Standard. Elite." },
 ];
 
@@ -134,7 +138,7 @@ export default function Home() {
             {services.map((s, i) => (
               <Link
                 key={s.name}
-                href="/services"
+                href={s.href}
                 className="group relative block border border-[var(--color-line)] bg-ink-2 p-6 transition-colors hover:border-brand"
               >
                 <div className="font-[family-name:var(--font-display)] text-xs tracking-[0.25em] uppercase text-mute group-hover:text-brand">
@@ -171,7 +175,7 @@ export default function Home() {
               </div>
             </div>
             <div className="absolute -bottom-px -right-px bg-brand px-4 py-2 font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.2em] text-ink">
-              Head Coach
+              Director · Founder
             </div>
           </div>
 

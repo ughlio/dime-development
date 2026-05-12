@@ -216,10 +216,16 @@ export default function ContactPage() {
                 Direct
               </div>
               <a
-                href="mailto:coach@dimedevelopment.com"
-                className="mt-3 block font-[family-name:var(--font-display)] text-2xl uppercase tracking-tight text-bone hover:text-brand transition-colors"
+                href="mailto:Dimedevelopment@hotmail.com"
+                className="mt-3 block font-[family-name:var(--font-display)] text-2xl uppercase tracking-tight text-bone hover:text-brand transition-colors break-words"
               >
-                coach@dimedevelopment.com
+                Dimedevelopment@hotmail.com
+              </a>
+              <a
+                href="tel:+447311883899"
+                className="mt-2 block font-[family-name:var(--font-display)] text-2xl uppercase tracking-tight text-bone hover:text-brand transition-colors"
+              >
+                07311 883 899
               </a>
               <a
                 href="https://instagram.com/dimedevelopment"

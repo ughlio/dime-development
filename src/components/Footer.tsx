@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
@@ -14,12 +15,16 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <div className="font-[family-name:var(--font-display)] text-3xl tracking-[0.08em] text-bone">
-              DIME<span className="text-brand">·</span>DEVELOPMENT
-            </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-mute">
-              Basketball coaching & player development. 1-on-1, group, clinics,
-              online. Built to elevate your game.
+            <Image
+              src="/logo.png"
+              alt="Dime Development"
+              width={320}
+              height={96}
+              className="h-14 w-auto"
+            />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-mute">
+              London-based basketball coaching & player development. 1-on-1,
+              group, clinics, online. Built to elevate your game.
             </p>
           </div>
 
@@ -58,10 +63,18 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:coach@dimedevelopment.com"
+                  href="tel:+447311883899"
                   className="text-bone hover:text-brand transition-colors"
                 >
-                  coach@dimedevelopment.com
+                  07311 883 899
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:Dimedevelopment@hotmail.com"
+                  className="text-bone hover:text-brand transition-colors"
+                >
+                  Dimedevelopment@hotmail.com
                 </a>
               </li>
               <li>
@@ -77,7 +90,14 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-[var(--color-line)] pt-6 text-xs text-mute md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} Dime Development. All rights reserved.</p>
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} Dime Development Ltd. All rights reserved.</p>
+            <p>
+              Registered in England &amp; Wales · Company No.{" "}
+              <span className="text-bone">15690433</span> · London, United
+              Kingdom
+            </p>
+          </div>
           <p className="font-[family-name:var(--font-display)] tracking-[0.2em] uppercase">
             Coach Daniel Maxwell
           </p>

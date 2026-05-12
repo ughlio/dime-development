@@ -4,6 +4,12 @@
 
 Basketball coaching & mentoring website for **Coach Daniel Maxwell**, brand name **Dime Development**.
 
+**Company info (UK):**
+- Location: London, United Kingdom
+- Companies House registration no.: **15690433**
+- UK Companies Act 2006 s.82 requires company number + registered office + place of registration to appear on the website — these live in the footer.
+- Pricing is in **GBP (£)**, not USD. Copy uses UK English where it shows on the site.
+
 ## Stack
 
 - **Next.js 16** (App Router, src/ dir)
