@@ -74,9 +74,9 @@ export default function ShopPage() {
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ background: "rgba(57,255,20,0.06)" }}
                   >
-                    <div style={{ border: "1px solid var(--color-brand)", padding: "0.4rem 1rem" }}
+                    <div
                       className="font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.25em]"
-                      style={{ color: "var(--color-brand)" } as React.CSSProperties}
+                      style={{ border: "1px solid var(--color-brand)", padding: "0.4rem 1rem", color: "var(--color-brand)" }}
                     >Order →</div>
                   </div>
                 </div>
