@@ -29,13 +29,7 @@ export function Footer() {
             <ul className="space-y-2">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="transition-colors text-sm"
-                    style={{ color: "var(--color-bone)" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "var(--color-brand)")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "var(--color-bone)")}
-                  >
+                  <Link href={l.href} className="footer-link text-sm">
                     {l.label}
                   </Link>
                 </li>

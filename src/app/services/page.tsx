@@ -277,20 +277,7 @@ export default function ServicesPage() {
           {/* Quick nav */}
           <nav className="mt-10 flex flex-wrap gap-2">
             {services.map((s) => (
-              <a
-                key={s.slug}
-                href={`#${s.slug}`}
-                className="font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.2em] px-4 py-2 transition-all"
-                style={{ border: "1px solid var(--color-line)", background: "var(--color-ink-2)", color: "var(--color-bone)" }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--color-brand)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--color-brand)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--color-line)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--color-bone)";
-                }}
-              >
+              <a key={s.slug} href={`#${s.slug}`} className="nav-pill">
                 {s.num} · {s.name.split(/[&·]/)[0].trim()}
               </a>
             ))}
