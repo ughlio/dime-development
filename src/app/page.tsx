@@ -36,7 +36,7 @@ export default function Home() {
         {/* Ghost letterform */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-8 top-1/2 -translate-y-1/2 select-none font-[family-name:var(--font-display)] leading-none"
+          className="ghost-drift pointer-events-none absolute -right-8 top-1/2 -translate-y-1/2 select-none font-[family-name:var(--font-display)] leading-none"
           style={{ fontSize: "clamp(240px,40vw,520px)", color: "var(--color-brand)", opacity: 0.04 }}
         >
           D

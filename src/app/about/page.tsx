@@ -21,7 +21,7 @@ export default function AboutPage() {
       <section className="noise relative overflow-hidden" style={{ borderBottom: "1px solid var(--color-line)" }}>
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-6 top-0 bottom-0 flex items-center font-[family-name:var(--font-display)] select-none leading-none"
+          className="ghost-drift pointer-events-none absolute -right-6 top-0 bottom-0 flex items-center font-[family-name:var(--font-display)] select-none leading-none"
           style={{ fontSize: "clamp(160px,32vw,420px)", color: "var(--color-brand)", opacity: 0.04 }}
         >
           DM

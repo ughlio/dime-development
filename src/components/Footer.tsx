@@ -43,13 +43,13 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="https://instagram.com/dimedevelopment"
+                  href="https://instagram.com/dime_development"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
                   style={{ color: "var(--color-bone)" }}
                 >
-                  @dimedevelopment →
+                  @dime_development →
                 </a>
               </li>
               <li>

@@ -92,7 +92,7 @@ export default function ContactPage() {
       <section className="noise relative overflow-hidden" style={{ borderBottom: "1px solid var(--color-line)" }}>
         <div
           aria-hidden
-          className="pointer-events-none absolute right-0 inset-y-0 flex items-center font-[family-name:var(--font-display)] select-none leading-none"
+          className="ghost-drift pointer-events-none absolute right-0 inset-y-0 flex items-center font-[family-name:var(--font-display)] select-none leading-none"
           style={{ fontSize: "clamp(100px,24vw,320px)", color: "var(--color-brand)", opacity: 0.04 }}
         >
           HMU
@@ -136,10 +136,10 @@ export default function ContactPage() {
                 style={{ fontSize: "clamp(1rem,2vw,1.4rem)", color: "var(--color-bone)" }}>
                 07311 883 899
               </a>
-              <a href="https://instagram.com/dimedevelopment" target="_blank" rel="noopener noreferrer"
+              <a href="https://instagram.com/dime_development" target="_blank" rel="noopener noreferrer"
                 className="mt-3 block font-[family-name:var(--font-display)] uppercase transition-colors"
                 style={{ fontSize: "clamp(0.9rem,1.8vw,1.2rem)", color: "var(--color-brand)" }}>
-                @dimedevelopment →
+                @dime_development →
               </a>
             </div>
             <div className="p-6 lg:p-8">

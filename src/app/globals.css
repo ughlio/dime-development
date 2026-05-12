@@ -73,6 +73,11 @@ html, body {
   97%       { opacity: 0.7; }
   98%       { opacity: 1; }
 }
+@keyframes ghost-drift {
+  0%, 100% { transform: translateY(0) rotate(0deg);    }
+  38%       { transform: translateY(-16px) rotate(-0.4deg); }
+  72%       { transform: translateY(8px) rotate(0.25deg);  }
+}
 
 /* ─── Animation utilities ───────────────────────────── */
 .anim-fade-up  { animation: fade-up  0.7s cubic-bezier(0.16,1,0.3,1) both; }
@@ -85,6 +90,12 @@ html, body {
 .delay-3  { animation-delay: 0.35s; }
 .delay-4  { animation-delay: 0.5s; }
 .delay-5  { animation-delay: 0.65s; }
+
+/* ─── Ghost letterform drift ────────────────────────── */
+.ghost-drift {
+  animation: ghost-drift 11s ease-in-out infinite;
+  will-change: transform;
+}
 
 /* ─── Section diagonal clip ─────────────────────────── */
 .clip-bottom {

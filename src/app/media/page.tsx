@@ -14,7 +14,7 @@ export default function MediaPage() {
       <section className="noise relative overflow-hidden" style={{ borderBottom: "1px solid var(--color-line)" }}>
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-4 inset-y-0 flex items-center font-[family-name:var(--font-display)] select-none leading-none"
+          className="ghost-drift pointer-events-none absolute -right-4 inset-y-0 flex items-center font-[family-name:var(--font-display)] select-none leading-none"
           style={{ fontSize: "clamp(120px,28vw,360px)", color: "var(--color-brand)", opacity: 0.04 }}
         >
           GYM

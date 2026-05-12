@@ -55,12 +55,12 @@ export function MediaGrid({ items }: { items: MediaItem[] }) {
               </span>
             </div>
             <a
-              href="https://instagram.com/dimedevelopment"
+              href="https://instagram.com/dime_development"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-auto font-[family-name:var(--font-display)] text-xs uppercase tracking-[0.2em] text-mute hover:text-brand transition-colors"
             >
-              @dimedevelopment →
+              @dime_development →
             </a>
           </div>
 
