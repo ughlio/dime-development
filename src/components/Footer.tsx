@@ -49,17 +49,17 @@ export function Footer() {
                   className="transition-colors"
                   style={{ color: "var(--color-bone)" }}
                 >
-                  @dime_development →
+                  Instagram →
                 </a>
               </li>
               <li>
                 <a href="tel:+447311883899" className="transition-colors" style={{ color: "var(--color-bone)" }}>
-                  07311 883 899
+                  Phone No
                 </a>
               </li>
               <li>
-                <a href="mailto:Dimedevelopment@hotmail.com" className="transition-colors break-all" style={{ color: "var(--color-bone)" }}>
-                  Dimedevelopment@hotmail.com
+                <a href="mailto:Dimedevelopment@hotmail.com" className="transition-colors" style={{ color: "var(--color-bone)" }}>
+                  Email
                 </a>
               </li>
               <li>
