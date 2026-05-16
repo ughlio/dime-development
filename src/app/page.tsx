@@ -231,16 +231,15 @@ export default function Home() {
             className="mt-2 font-[family-name:var(--font-display)] uppercase leading-[1.05] tracking-tight"
             style={{ fontSize: "clamp(1.8rem,5vw,4rem)" }}
           >
-            Coach took my game from good to{" "}
-            <span style={{ color: "var(--color-brand)" }}>undeniable.</span>{" "}
-            Every session he pushed me past where I thought I could go.
+            A tireless worker with relentless drive on and off the court. Daniel puts every ounce into executing the game to{" "}
+            <span style={{ color: "var(--color-brand)" }}>perfection.</span>
           </blockquote>
           <div className="mt-8 flex items-center gap-4">
             <div style={{ height: 2, width: 40, background: "var(--color-brand)" }} />
             <div>
-              <div className="font-[family-name:var(--font-display)] uppercase tracking-wider" style={{ fontSize: "0.85rem" }}>Player Name</div>
+              <div className="font-[family-name:var(--font-display)] uppercase tracking-wider" style={{ fontSize: "0.85rem" }}>Julius Joseph MBE</div>
               <div style={{ fontSize: "0.7rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-mute)", fontFamily: "var(--font-display)" }}>
-                Varsity · Class of 2026
+                Basketball Professional · 10+ Years
               </div>
             </div>
           </div>

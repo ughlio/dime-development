@@ -72,17 +72,17 @@ export default function AboutPage() {
             className="mt-4 font-[family-name:var(--font-display)] uppercase leading-[0.9]"
             style={{ fontSize: "clamp(2rem,5vw,4rem)" }}
           >
-            Built on the grind, not the glamour.
+            Assisting in your future.
           </h2>
           <div className="mt-8 space-y-5 lead">
             <p>
-              [Placeholder bio — coach to replace.] Daniel grew up in the gym. Long before he was a coach, he was a kid putting up shots after every team practice ended. That work ethic became the foundation for everything that followed.
+              Dime Development is a sports service that specialises in using basketball as a vehicle for personal development — building young people&apos;s skills, confidence, and pathways. With a deep passion for the sport, Daniel brings everyday life lessons off the court and onto it, interpreting ethical skills through the game and providing opportunities to better themselves through sport.
             </p>
             <p>
-              After years competing and learning under coaches who shaped him, he turned his attention to giving back — building the kind of programme he wished he&apos;d had.
+              Working alongside schools and communities across London, the mission is clear: use sport to create opportunity, push young people to strive for more, and give every player — regardless of background, age, or ability — the support and advice to understand how to further their basketball career. Dime Development works to enforce social cohesion within the community and enlarge career paths for the youth through sport.
             </p>
             <p>
-              Today, Dime Development trains players from primary school through college, online and in-person across London. The mission stays the same: meet the player where they are, push them where they need to go.
+              With national and international basketball experience across education and sport — including work in the Brent community and the University of Middlesex — Daniel has built a programme that goes beyond skill. It is mentoring, accountability, and a genuine belief that every young person deserves a coach who takes them seriously.
             </p>
           </div>
         </div>
@@ -154,6 +154,56 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ───────────────────────────── */}
+      <section style={{ borderBottom: "1px solid var(--color-line)" }}>
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-24">
+          <div className="eyebrow mb-10">What They Say</div>
+          <div className="grid gap-px sm:grid-cols-2" style={{ background: "var(--color-line)" }}>
+
+            {/* Julius Joseph MBE */}
+            <div className="p-8 lg:p-12" style={{ background: "var(--color-ink-2)" }}>
+              <div
+                className="font-[family-name:var(--font-display)] leading-none"
+                style={{ fontSize: "4rem", color: "var(--color-brand)", opacity: 0.3 }}
+              >&ldquo;</div>
+              <p className="mt-3 leading-relaxed" style={{ color: "var(--color-bone)", lineHeight: 1.8, fontSize: "1rem" }}>
+                I have known Daniel for approximately 10 years alongside working with him in the sporting field. He is a tireless worker with relentless drive on and off the court — Daniel puts every ounce of his flesh into executing the game to perfection. His experience in the sport is above average having been in a basketball environment for more than half of his life. The majority of students he has coached showed early signs of improvement in their fundamental abilities and knowledge.
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <div style={{ height: 2, width: 32, background: "var(--color-brand)", flexShrink: 0 }} />
+                <div>
+                  <div className="font-[family-name:var(--font-display)] uppercase tracking-wide" style={{ fontSize: "0.9rem" }}>Julius Joseph MBE</div>
+                  <div style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-mute)", fontFamily: "var(--font-display)" }}>
+                    Basketball Professional
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Michael Quamina */}
+            <div className="p-8 lg:p-12" style={{ background: "var(--color-ink-2)" }}>
+              <div
+                className="font-[family-name:var(--font-display)] leading-none"
+                style={{ fontSize: "4rem", color: "var(--color-brand)", opacity: 0.3 }}
+              >&ldquo;</div>
+              <p className="mt-3 leading-relaxed" style={{ color: "var(--color-bone)", lineHeight: 1.8, fontSize: "1rem" }}>
+                Daniel is an inspiring coach — he has a love for the game which is refreshing to see and great support for new players. His tactical ability, strengthened by his national and international experience, is the driving force behind his successful coaching in the Brent community and the University of Middlesex.
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <div style={{ height: 2, width: 32, background: "var(--color-brand)", flexShrink: 0 }} />
+                <div>
+                  <div className="font-[family-name:var(--font-display)] uppercase tracking-wide" style={{ fontSize: "0.9rem" }}>Michael Quamina</div>
+                  <div style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-mute)", fontFamily: "var(--font-display)" }}>
+                    Curriculum Lead · Basketball Academy Head Coach
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
