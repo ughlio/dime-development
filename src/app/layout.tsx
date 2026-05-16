@@ -19,7 +19,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Dime Development | London Basketball Coaching with Daniel Maxwell",
   description:
-    "London-based basketball coaching. 1-on-1, group, clinic, and online training with Coach Daniel Maxwell. Dimes don't miss.",
+    "London-based basketball coaching & player development. 1-2-1, group, clinics, and online training with Coach Daniel Maxwell. Dimes don't miss.",
+  openGraph: {
+    title: "Dime Development | London Basketball Coaching",
+    description:
+      "London-based basketball coaching & player development with Coach Daniel Maxwell. Personalised training for all ages and abilities.",
+    siteName: "Dime Development",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dime Development | London Basketball Coaching",
+    description:
+      "London-based basketball coaching & player development with Coach Daniel Maxwell.",
+  },
 };
 
 export default function RootLayout({
@@ -31,8 +45,9 @@ export default function RootLayout({
       className={`${bebas.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ink text-bone">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Navbar />
-        <main className="flex-1 pt-[76px]">
+        <main id="main-content" className="flex-1 pt-[76px]">
           <ScrollReveal />
           {children}
         </main>

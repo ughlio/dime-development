@@ -65,6 +65,7 @@ export function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  aria-current={active ? "page" : undefined}
                   className="relative font-[family-name:var(--font-display)] text-[0.72rem] uppercase tracking-[0.22em] transition-colors duration-150"
                   style={{ color: active ? "var(--color-brand)" : "var(--color-bone)" }}
                 >
@@ -143,6 +144,7 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={close}
+                aria-current={active ? "page" : undefined}
                 className="block border-b py-5 font-[family-name:var(--font-display)] text-4xl uppercase tracking-[0.08em] transition-colors"
                 style={{
                   borderColor: "var(--color-line)",
