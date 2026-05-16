@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeroVideo } from "@/components/HeroVideo";
 
 const stats = [
   { num: "10+",  label: "Years\nCoaching"      },
@@ -22,26 +23,8 @@ export default function Home() {
         className="noise relative overflow-hidden"
         style={{ minHeight: "calc(100svh - 76px)" }}
       >
-        {/* Hero video background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          style={{
-            opacity: 0.38,
-            maskImage:
-              "linear-gradient(to right, transparent, black 18%, black 82%, transparent), linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
-            maskComposite: "intersect",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 18%, black 82%, transparent), linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
-            WebkitMaskComposite: "source-in",
-          }}
-        >
-          <source src="/ballhandling.mp4" type="video/mp4" />
-        </video>
+        {/* Hero video — loads after page is interactive */}
+        <HeroVideo />
 
         {/* Background grid texture */}
         <div
