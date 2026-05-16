@@ -22,6 +22,27 @@ export default function Home() {
         className="noise relative overflow-hidden"
         style={{ minHeight: "calc(100svh - 76px)" }}
       >
+        {/* Hero video background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          style={{
+            opacity: 0.38,
+            maskImage:
+              "linear-gradient(to right, transparent, black 18%, black 82%, transparent), linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+            maskComposite: "intersect",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 18%, black 82%, transparent), linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskComposite: "source-in",
+          }}
+        >
+          <source src="/ballhandling.mp4" type="video/mp4" />
+        </video>
+
         {/* Background grid texture */}
         <div
           aria-hidden
@@ -30,7 +51,7 @@ export default function Home() {
             backgroundImage:
               "linear-gradient(var(--color-line) 1px,transparent 1px),linear-gradient(90deg,var(--color-line) 1px,transparent 1px)",
             backgroundSize: "64px 64px",
-            opacity: 0.18,
+            opacity: 0.12,
           }}
         />
         {/* Ghost letterform */}
